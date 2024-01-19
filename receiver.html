@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receiver Registration</title>
+    <style>
+        body {
+    background-color: teal;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+form {
+    width: 80%;
+    max-width: 400px; /* Adjust the max-width as needed */
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #006666;
+    color: white;
+    cursor: pointer;
+    width: auto; /* Allow button to shrink to fit content */
+    padding: 8px 16px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #004d4d;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Receiver Registration</h1>
+    <form action="receive.php" method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="blood_group">Blood Group:</label>
+        <input type="text" id="blood_group" name="blood_group" required>
+
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" required>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label for="guardian_name">Guardian Name:</label>
+        <input type="text" id="guardian_name" name="guardian_name" required>
+
+        <label for="guardian_phone_number">Guardian Phone Number:</label>
+        <input type="text" id="guardian_phone_number" name="guardian_phone_number" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

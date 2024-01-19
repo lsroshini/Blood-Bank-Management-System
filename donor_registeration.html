@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration</title>
+    <style>
+        body {
+    background-color: teal;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Minimum height to cover the viewport */
+}
+
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: white; /* Set heading color to white */
+        }
+
+        form {
+            width: 80%;
+            max-width: 400px; /* Adjust the max-width as needed */
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #006666;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004d4d;
+        }
+
+        button {
+            background-color: #006666;
+            color: white; /* Text color is white */
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004d4d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Donor Form</h1>
+    <form action="d_reg.php" method="post">
+        <div class="form-group">
+            <label for="aadhar">Aadhar number:</label>
+            <input type="number" id="aadhar" name="aadhar" required>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" required>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" required>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input type="number" id="phone" name="phone" required>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="locality">Locality:</label>
+            <input type="text" id="locality" name="locality" required>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="blood-group">Blood Group:</label>
+            <select id="blood-group" name="blood-group" required>
+                <option value="" disabled selected>Select your blood group</option>
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="AB-">AB-</option>
+                <option value="O-">O-</option>
+            </select>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth (DOB):</label>
+            <input type="date" id="dob" name="dob" required>
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+            <p></p>
+        </div>
+        <!-- Ask if the person has already donated blood -->
+        <div class="form-group">
+            <label for="alreadyDonated">Have you already donated blood?</label>
+            <select id="alreadyDonated" name="alreadyDonated" onchange="toggleLastDonated()">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <p></p>
+        </div>
+        <!-- Additional section for last donation date -->
+        <div class="form-group" id="lastDonatedSection" style="display: none;">
+            <label for="last">Last donated:</label>
+            <input type="date" id="last" name="last">
+            <p></p>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function toggleLastDonated() {
+            const alreadyDonatedSelect = document.getElementById("alreadyDonated");
+            const lastDonatedSection = document.getElementById("lastDonatedSection");
+
+            // Show/hide the lastDonatedSection based on the person's response
+            if (alreadyDonatedSelect.value === "yes") {
+                lastDonatedSection.style.display = "block";
+            } else {
+                lastDonatedSection.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

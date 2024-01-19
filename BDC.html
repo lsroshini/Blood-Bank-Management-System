@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Camp Form</title>
+    <style>
+        body {
+            background-color: teal;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            width: 80%;
+            max-width: 400px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        select {
+            width: calc(100% - 16px);
+            margin-bottom: 10px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box; /* Include padding in the width */
+        }
+
+        input[type="submit"] {
+            background-color: #006666;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            padding: 8px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004d4d;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Blood Donation Camp Form</h2>
+    <form action="camp_create.php" method="post">
+        <label for="drive_name">Drive Name:</label>
+        <input type="text" id="drive_name" name="drive_name" required>
+        <p></p>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <p></p>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <p></p>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+        <p></p>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
